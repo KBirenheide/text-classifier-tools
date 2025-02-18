@@ -126,128 +126,128 @@ licenses and notices.
 
 ## Example Run
 
-python3 train.py spam_train.json --name spam-ham --evaluate spam_evaluate.json --fine-tune 5 --solver newton-cg --common-words 25
-[LOG][INFO] Starting training for classifier: spam-ham
-[LOG][INFO] Using dataset: spam_train.json
-[LOG][INFO] Dataset loaded successfully.
-[LOG][INFO] Final dataset size after cleaning: 20122
-[LOG][INFO] Preprocessing dataset...
-[LOG][INFO] Most common words excluded: the, to, a, and, of, in, you, for, is, ?, this, i, on, enron, that, it, s, be, with, your, we, !, $, have, from
-[LOG][INFO] Preprocessed dataset saved as: preprocessed_spam_train.json
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114159.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 92.91%
-[LOG][INFO] Baseline Accuracy: 92.91%
-[LOG][INFO] Fine-tuning C parameter.
-[LOG][INFO] C parameter fine-tuning step 1 of 5 with parameter value 2.0.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114238.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.27%
-[LOG][INFO] C improved! New best: 2.0 (Accuracy: 93.27%)
-[LOG][INFO] C parameter fine-tuning step 2 of 5 with parameter value 2.6931471805599454.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114314.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.37%
-[LOG][INFO] C improved! New best: 2.6931471805599454 (Accuracy: 93.37%)
-[LOG][INFO] C parameter fine-tuning step 3 of 5 with parameter value 3.7917594692280554.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114352.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.45%
-[LOG][INFO] C improved! New best: 3.7917594692280554 (Accuracy: 93.45%)
-[LOG][INFO] C parameter fine-tuning step 4 of 5 with parameter value 5.178053830347946.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114429.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.53%
-[LOG][INFO] C improved! New best: 5.178053830347946 (Accuracy: 93.53%)
-[LOG][INFO] C parameter fine-tuning step 5 of 5 with parameter value 6.787491742782047.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114508.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.56%
-[LOG][INFO] C improved! New best: 6.787491742782047 (Accuracy: 93.56%)
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114159.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114314.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114429.joblib
-[LOG][INFO] Fine-tuning weight parameter.
-[LOG][INFO] weight parameter fine-tuning step 1 of 5 with parameter value 1.1.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114546.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.59%
-[LOG][INFO] weight improved! New best: 1.1 (Accuracy: 93.59%)
-[LOG][INFO] weight parameter fine-tuning step 2 of 5 with parameter value 1.1693147180559946.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114625.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.62%
-[LOG][INFO] weight improved! New best: 1.1693147180559946 (Accuracy: 93.62%)
-[LOG][INFO] weight parameter fine-tuning step 3 of 5 with parameter value 1.2791759469228057.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114703.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.58%
-[LOG][INFO] No improvement, setting step skipping. Optimum tuning for weight is likely between 1.1693147180559946 and 1.2791759469228057
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114238.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114508.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114703.joblib
-[LOG][INFO] Fine-tuning min_df parameter.
-[LOG][INFO] min_df parameter fine-tuning step 1 of 5 with parameter value 6.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114741.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.46%
-[LOG][INFO] No improvement, switching direction. Testing min_df=2
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114821.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.84%
-[LOG][INFO] min_df decreased and improved! New best: 2 (Accuracy: 93.84%)
-[LOG][INFO] min_df parameter fine-tuning step 2 of 5 with parameter value 1.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114908.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.58%
-[LOG][INFO] No improvement, setting step skipping. Optimum tuning for min_df is likely between 2 and 1
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114352.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114625.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114908.joblib
-[LOG][INFO] Fine-tuning max_df parameter.
-[LOG][INFO] max_df parameter fine-tuning step 1 of 5 with parameter value 0.9.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115002.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.84%
-[LOG][INFO] No improvement, switching direction. Testing max_df=0.7999999999999999
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115045.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.84%
-[LOG][INFO] max_df parameter fine-tuning step 2 of 5 with parameter value 0.7999999999999999.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115127.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.84%
-[LOG][INFO] No improvement, setting step skipping. Optimum tuning for max_df is likely between 0.85 and 0.7999999999999999
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114546.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-115002.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-115127.joblib
-[LOG][INFO] Fine-tuning max_iter parameter.
-[LOG][INFO] max_iter parameter fine-tuning step 1 of 5 with parameter value 750.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115209.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.84%
-[LOG][INFO] No improvement, switching direction. Testing max_iter=250
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115251.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.84%
-[LOG][INFO] max_iter parameter fine-tuning step 2 of 5 with parameter value 250.
-[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115332.joblib
-[LOG][INFO] Starting model evaluation
-[LOG][INFO] Model accuracy: 93.84%
-[LOG][INFO] No improvement, setting step skipping. Optimum tuning for max_iter is likely between 500 and 250
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114741.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-115045.joblib
-[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-115251.joblib
-[LOG][INFO] Best model retained: classifier_spam-ham_20250218-114821.joblib with accuracy 93.84%.
-[LOG][INFO] Model metadata saved as: classifier_spam-ham_20250218-114821.joblib_meta.json
+python3 train.py spam_train.json --name spam-ham --evaluate spam_evaluate.json --fine-tune 5 --solver newton-cg --common-words 25  
+[LOG][INFO] Starting training for classifier: spam-ham  
+[LOG][INFO] Using dataset: spam_train.json  
+[LOG][INFO] Dataset loaded successfully.  
+[LOG][INFO] Final dataset size after cleaning: 20122  
+[LOG][INFO] Preprocessing dataset...  
+[LOG][INFO] Most common words excluded: the, to, a, and, of, in, you, for, is, ?, this, i, on, enron, that, it, s, be, with, your, we, !, $, have, from  
+[LOG][INFO] Preprocessed dataset saved as: preprocessed_spam_train.json  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114159.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 92.91%  
+[LOG][INFO] Baseline Accuracy: 92.91%  
+[LOG][INFO] Fine-tuning C parameter.  
+[LOG][INFO] C parameter fine-tuning step 1 of 5 with parameter value 2.0.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114238.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.27%  
+[LOG][INFO] C improved! New best: 2.0 (Accuracy: 93.27%)  
+[LOG][INFO] C parameter fine-tuning step 2 of 5 with parameter value 2.6931471805599454.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114314.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.37%  
+[LOG][INFO] C improved! New best: 2.6931471805599454 (Accuracy: 93.37%)  
+[LOG][INFO] C parameter fine-tuning step 3 of 5 with parameter value 3.7917594692280554.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114352.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.45%  
+[LOG][INFO] C improved! New best: 3.7917594692280554 (Accuracy: 93.45%)  
+[LOG][INFO] C parameter fine-tuning step 4 of 5 with parameter value 5.178053830347946.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114429.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.53%  
+[LOG][INFO] C improved! New best: 5.178053830347946 (Accuracy: 93.53%)  
+[LOG][INFO] C parameter fine-tuning step 5 of 5 with parameter value 6.787491742782047.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114508.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.56%  
+[LOG][INFO] C improved! New best: 6.787491742782047 (Accuracy: 93.56%)  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114159.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114314.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114429.joblib  
+[LOG][INFO] Fine-tuning weight parameter.  
+[LOG][INFO] weight parameter fine-tuning step 1 of 5 with parameter value 1.1.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114546.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.59%  
+[LOG][INFO] weight improved! New best: 1.1 (Accuracy: 93.59%)  
+[LOG][INFO] weight parameter fine-tuning step 2 of 5 with parameter value 1.1693147180559946.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114625.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.62%  
+[LOG][INFO] weight improved! New best: 1.1693147180559946 (Accuracy: 93.62%)  
+[LOG][INFO] weight parameter fine-tuning step 3 of 5 with parameter value 1.2791759469228057.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114703.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.58%  
+[LOG][INFO] No improvement, setting step skipping. Optimum tuning for weight is likely between 1.1693147180559946 and 1.2791759469228057  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114238.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114508.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114703.joblib  
+[LOG][INFO] Fine-tuning min_df parameter.  
+[LOG][INFO] min_df parameter fine-tuning step 1 of 5 with parameter value 6.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114741.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.46%  
+[LOG][INFO] No improvement, switching direction. Testing min_df=2  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114821.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.84%  
+[LOG][INFO] min_df decreased and improved! New best: 2 (Accuracy: 93.84%)  
+[LOG][INFO] min_df parameter fine-tuning step 2 of 5 with parameter value 1.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-114908.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.58%  
+[LOG][INFO] No improvement, setting step skipping. Optimum tuning for min_df is likely between 2 and 1  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114352.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114625.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114908.joblib  
+[LOG][INFO] Fine-tuning max_df parameter.  
+[LOG][INFO] max_df parameter fine-tuning step 1 of 5 with parameter value 0.9.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115002.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.84%  
+[LOG][INFO] No improvement, switching direction. Testing max_df=0.7999999999999999  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115045.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.84%  
+[LOG][INFO] max_df parameter fine-tuning step 2 of 5 with parameter value 0.7999999999999999.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115127.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.84%  
+[LOG][INFO] No improvement, setting step skipping. Optimum tuning for max_df is likely between 0.85 and 0.7999999999999999  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114546.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-115002.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-115127.joblib  
+[LOG][INFO] Fine-tuning max_iter parameter.  
+[LOG][INFO] max_iter parameter fine-tuning step 1 of 5 with parameter value 750.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115209.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.84%  
+[LOG][INFO] No improvement, switching direction. Testing max_iter=250  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115251.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.84%  
+[LOG][INFO] max_iter parameter fine-tuning step 2 of 5 with parameter value 250.  
+[LOG][INFO] Saving model to: classifier_spam-ham_20250218-115332.joblib  
+[LOG][INFO] Starting model evaluation  
+[LOG][INFO] Model accuracy: 93.84%  
+[LOG][INFO] No improvement, setting step skipping. Optimum tuning for max_iter is likely between 500 and 250  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Skipping step: fine-tuning this parameter further yields no improvement in either direction.  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-114741.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-115045.joblib  
+[LOG][INFO] Deleted suboptimal model: classifier_spam-ham_20250218-115251.joblib  
+[LOG][INFO] Best model retained: classifier_spam-ham_20250218-114821.joblib with accuracy 93.84%.  
+[LOG][INFO] Model metadata saved as: classifier_spam-ham_20250218-114821.joblib_meta.json  
