@@ -1,0 +1,37 @@
+{
+    "model": "classifier_spam-ham_20250218-114821.joblib",
+    "evaluation": {
+        "test_samples": 29828,
+        "accuracy": "93.84%"
+    },
+    "hyperparameters": {
+        "C": 6.787491742782047,
+        "weight": 1.1693147180559946,
+        "max_iter": 500,
+        "min_df": 2,
+        "max_df": 0.85,
+        "solver": "newton-cg"
+    },
+    "fine_tuning_recommendation": {
+        "C": [
+            1.0,
+            1.0
+        ],
+        "weight": [
+            1.1693147180559946,
+            1.2791759469228057
+        ],
+        "max_iter": [
+            500,
+            250
+        ],
+        "min_df": [
+            2,
+            1
+        ],
+        "max_df": [
+            0.85,
+            0.7999999999999999
+        ]
+    }
+}
