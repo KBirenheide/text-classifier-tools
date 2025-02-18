@@ -94,7 +94,7 @@ limits = {
     "max_df": (0.5, 0.95)  # Min 0.5, Max 0.95
 }
 
-preprocessed_file = f"preprocessed_{os.path.basename(args.dataset)}"
+preprocessed_file = f"output/preprocessed_{os.path.basename(args.dataset)}"
 
 # Load dataset
 if args.skip_data_prep and os.path.exists(preprocessed_file):
@@ -169,7 +169,7 @@ def train_and_evaluate(params):
 
     # Save model
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    model_filename = f"classifier_{args.name}_{timestamp}.joblib"
+    model_filename = f"output/classifier_{args.name}_{timestamp}.joblib"
     print(f"[LOG][INFO] Saving model to: {model_filename}")
     joblib.dump(pipeline, model_filename)
 
@@ -182,7 +182,7 @@ def train_and_evaluate(params):
         )
         # Read results from classify.py output file
         try:
-            with open("evaluation_results.json", "r") as f:
+            with open("output/evaluation_results.json", "r") as f:
                 eval_results = json.load(f)
                 accuracy = eval_results.get("accuracy", 0)
                 test_samples = eval_results.get("tested_samples", 0 )
@@ -321,7 +321,7 @@ if args.fine_tune and args.evaluate:
 
     # Write model metadata to a JSON file
     try:
-        meta_filename = f"{best_model}_meta.json"
+        meta_filename = f"output/{best_model}_meta.json"
         with open(meta_filename, "w") as f:
             json.dump(model_meta, f, indent=4)
         print(f"[LOG][INFO] Model metadata saved as: {meta_filename}")

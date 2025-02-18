@@ -126,7 +126,7 @@ elif args.evaluate:
     print(json.dumps(results, indent=4))
 
     # Write to a JSON file
-    with open("evaluation_results.json", "w") as f:
+    with open("output/evaluation_results.json", "w") as f:
         json.dump(results, f, indent=4)
 
     print("[LOG][INFO] Evaluation results saved to evaluation_results.json")
