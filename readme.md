@@ -1,12 +1,14 @@
 # Text Classification Model Training & Evaluation
 
-This repository provides tools for training and evaluating **text classification models** using Logistic Regression and **TF-IDF** vectorization. It includes:
+This repository provides tools for training and evaluating **text classification models** using Logistic Regression 
+and **TF-IDF** vectorization. It includes:
 
 - `train.py` → **Train and fine-tune models** using labeled datasets.
 - `classify.py` → **Classify text samples or evaluate trained models**.
 
-Training should be fast and generated models light-weight, even on weaker machines. I created these scripts with the intention of integrating them as
-API spam filters for web applications, so a low performance overhead is a key concern.
+Training should be fast and generated models light-weight, even on weaker machines. 
+I created these scripts with the intention of integrating them as API spam filters for web applications, 
+so a low performance overhead is a key concern.
 
 ---
 
@@ -23,7 +25,7 @@ API spam filters for web applications, so a low performance overhead is a key co
 ## 📂 Installation
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-repo/text-classification.git
+   git clone https://github.com/KBirenheide/text-classifier-tools
    cd text-classification
    ```
 
@@ -36,10 +38,15 @@ API spam filters for web applications, so a low performance overhead is a key co
 
 ## 🔥 Training a Model (`train.py`)
 ### **Basic Usage**
-To train a model using a labeled dataset:
+To train a model using a labeled dataset and labeled testset:
 ```bash
 python3 train.py dataset.json --name my-classifier --evaluate testset.json
 ```
+### 📜 Input Files
+datasets should be in .json form and contain a json array of objects with the alues "text" and "label",
+where "text" contains the to-be-classified text, and "label" a binary classification of 1 (true) or 0 (false).
+So, if you were to prepare a dataset with a "spam/ham" column, you would map it to "label" as 1 for "spam" 
+and 0 for "ham".
 
 ### **Optional Arguments**
 | Argument | Description |
@@ -63,6 +70,14 @@ python3 train.py dataset.json --name my-classifier --evaluate testset.json --fin
 
 - **Automatically tests different values** for parameters like `C`, `class_weight`, `min_df`, etc.
 - **Stores tuning recommendations** in `classifier_my-classifier_meta.json`.
+
+### **Solvers**
+| Solver | Type | Best For | Key Characteristics |
+|--------|------|----------|---------------------|
+| liblinear	Linear | (Coordinate Descent) | Small/Medium Datasets | Fast, handles L1 (Lasso) and L2 (Ridge) regularization |
+| lbfgs	| Quasi-Newton | Multiclass, Large Data | Uses second-order derivatives (Hessian), supports L2 regularization |
+| saga	| Stochastic Gradient Descent | Large-Scale Sparse Data | Supports L1, L2, and ElasticNet regularization |
+| newton-cg	| Newton’s Method | Large Datasets, Multiclass | Uses second-order derivatives for fast convergence, but expensive |
 
 ---
 
@@ -98,12 +113,14 @@ python3 classify.py model.joblib --evaluate testset.json
 ---
 
 ## 📢 License & Attribution
-- The scripts themselves are licensed under the MIT License, meaninf you can pretty much do what you want with them. However, I would appreciate any voluntary attribution when using them.
+- The scripts themselves are licensed under the MIT License, meaninf you can pretty much do 
+what you want with them. However, I would appreciate any voluntary attribution when using them.
 - The sample models under ./sample-models were created using existing datasets:
     - The **Enron Spam Dataset** was used under **GPL-3.0**, meaning trained models must also be **GPL-3.0 licensed**.
     - The **SMS Spam Dataset** has no specified license, allowing for broader usage.
 
-If you use any of the sample models, please cite the datasets accordingly, the model folders contain the appropriate licenses and notices.
+If you use any of the sample models, please cite the datasets accordingly, the model folders contain the appropriate 
+licenses and notices.
 
 🚀 **Happy training & classifying!**
 
