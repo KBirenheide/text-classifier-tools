@@ -13,12 +13,12 @@ so a low performance overhead is a key concern.
 ---
 
 ## 📂 Features
-✅ **Train a model** using a JSON dataset with `text` and `label` fields.
-✅ **Fine-tune hyperparameters** for optimal accuracy.
-✅ **Evaluate trained models** on test datasets.
-✅ **Automatically save the best-performing model**.
-✅ **Delete suboptimal models** after fine-tuning.
-✅ **Output model metadata for reproducibility**.
+✅ **Train a model** using a JSON dataset with `text` and `label` fields.  
+✅ **Fine-tune hyperparameters** for optimal accuracy.  
+✅ **Evaluate trained models** on test datasets.  
+✅ **Automatically save the best-performing model**.  
+✅ **Delete suboptimal models** after fine-tuning.  
+✅ **Output model metadata for reproducibility**.  
 
 ---
 

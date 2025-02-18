@@ -55,7 +55,7 @@ parser.add_argument("model", type=str, help="Path to the trained model (.joblib)
 mode_group = parser.add_mutually_exclusive_group(required=True)
 mode_group.add_argument("--text", type=str, help="Text input to classify.")
 mode_group.add_argument("--evaluate", type=str, help="Evaluate model using a dataset file (JSON with 'text' and 'label' fields).")
-mode_group.add_argument("--file", type=str, help="Classify multiple lines of text from a file (one per line).")
+mode_group.add_argument("--file", type=str, help="Classify text entries from a flat array json file.")
 
 args = parser.parse_args()
 
@@ -135,11 +135,12 @@ elif args.evaluate:
 elif args.file:
     try:
         with open(args.file, "r") as f:
-            lines = f.readlines()
-            texts = [line.strip() for line in lines if line.strip()]
-        print(f"[LOG][INFO] Loaded {len(texts)} lines from {args.file}.")
+            texts = json.load(f)
+            if not isinstance(texts, list):
+                raise ValueError("Text list must be a flat JSON array")
+        print(f"[LOG][INFO] Loaded text objects for classification from {args.evaluate} with {len(texts)} entries.")
     except Exception as e:
-        print(f"[LOG][ERROR] Failed to read file: {e}")
+        print(f"[LOG][ERROR] Failed to load text objects: {e}")
         sys.exit(1)
 
     # Preprocess texts
